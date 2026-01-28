@@ -24,15 +24,12 @@ const FaderThumb = React.forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivEleme
     ...style,
     width: 50,
     height: 80,
-    marginLeft: '-9px',
-    background: "linear-gradient(to bottom, #191717 0%, #444 100%)",
+    background: "linear-gradient(to bottom, #444 0%, #1a1a1a 100%)",
     borderRadius: "9px",
-    boxShadow: "2px 0 12px #0008",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.1)",
     position: "relative",
-    zIndex: 2,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    zIndex: 5,
+    opacity: 1,
   }}
   {...rest}
 >
@@ -48,41 +45,10 @@ const FaderThumb = React.forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivEleme
         top: `${spec.top}px`,
         background: "#000000",
         borderRadius: "2px",
-        opacity: 0.7,
+        opacity: 1,
       }}
     />
   ))}
-  {/* Outline ring */}
-  <svg
-    width={50}
-    height={80}
-    style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      pointerEvents: "none",
-      zIndex: 3,
-    }}
-  >
-    <polyline
-      fill="none"
-      stroke="#1f1c1c"
-      strokeWidth="2"
-      points={
-        grooveSpecs.map(spec => {
-          const w = (parseInt(spec.width) / 100) * 50;
-          const x = 25 - w / 2;
-          return `${x},${spec.top}`;
-        }).join(" ") +
-        " " +
-        grooveSpecs.slice().reverse().map(spec => {
-          const w = (parseInt(spec.width) / 100) * 50;
-          const x = 25 + w / 2;
-          return `${x},${spec.top}`;
-        }).join(" ")
-      }
-    />
-  </svg>
 </div>
   )
 );
