@@ -1,0 +1,140 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.homeButtonContainer {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 101;
+}
+
+.playerMenu {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: visible;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 15px 60px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.rulerPopup {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 555%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 60px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 24px; 
+  padding: 0 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.sliderTrack {
+  position: absolute;
+  width: 100%;
+  height: 7px;
+  background: #fff;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+.sliderHandle {
+  position: absolute;
+  width: 4px;
+  height: 16px;
+  background: #fff;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.numericInputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  min-width: 50px;
+  height: 30px;
+}
+
+.numericInput {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+.numericInput::-webkit-outer-spin-button,
+.numericInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.settingsMenu {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 0 20px;
+  width: fit-content;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  z-index: 1000;
+}
+
+.settingsLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.settingsCheckbox {
+  cursor: pointer;
+}
+
+.settingsText {
+  font-size: 14px;
+  white-space: nowrap;
+}
